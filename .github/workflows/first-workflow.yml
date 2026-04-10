@@ -1,10 +1,17 @@
 name: My First Workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    hello-world:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Hello World Action
-              run: echo "Hello, World!"
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World Action
+        run: echo "Hello, World!"
